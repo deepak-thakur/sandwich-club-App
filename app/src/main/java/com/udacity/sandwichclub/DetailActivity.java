@@ -26,6 +26,8 @@ public class DetailActivity extends AppCompatActivity {
     private TextView mdescription;
     private TextView morigin;
 
+    private TextView sand_headline_name;
+
 
 
     @Override
@@ -34,6 +36,7 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
 
+        sand_headline_name = (TextView) findViewById(R.id.sandwich_name);
 
         malso_knownas = (TextView) findViewById(R.id.also_known_tv);
         mingredients = (TextView) findViewById(R.id.ingredients_tv);
@@ -76,7 +79,8 @@ public class DetailActivity extends AppCompatActivity {
                 .load(sandwich.getImage())
                 .into(ingredientsIv);
 
-        setTitle(sandwich.getMainName());
+        sand_headline_name.setText(sandwich.getMainName());
+        //setTitle(sandwich.getMainName());
     }
 
     private void closeOnError() {
